@@ -1,0 +1,175 @@
+@page "/liquidacion"
+@inject IJSRuntime js
+
+
+<center><h1>     Calculadora de Liquidación    </h1>
+<div class="box-liquidacion" >
+<div class="contenedorcalculadora" >
+
+
+    <br>  <br>
+    <MatTextField id="txtSalarioMensual" @bind-Value="@SalarioMensual" Dense="true" Label="Salario Mensual" Outlined="true"
+    style="width:-webkit-fill-available;" Required="true" ></MatTextField>
+    <br><br>
+    <MatTextField id="txtDiasdeVacaciones" @bind-Value="@DiasdeVacaciones" Dense="true" Label="Dias de Vacaciones" Outlined="true"
+    style="width:-webkit-fill-available;" Required="true" ></MatTextField>
+    <br><br>
+    <MatDatePicker id="FechaIniciodeLabores" Label="Fecha inicio de labores" Required="true" @bind-Value="@FechaInicio" Outlined="true"
+    style="width:-webkit-fill-available;" EnableWeekNumbers="true"></MatDatePicker>
+    <br><br>
+    <MatDatePicker id="FechaFindeLabores" Label="Fecha fin de labores" Required="true" @bind-Value="@FechaTerminacion" Outlined="true"
+    style="width:-webkit-fill-available;" EnableWeekNumbers="true"></MatDatePicker>
+    <br><br>
+    <div class="contenedor" >
+    <MatButton Raised="true" style="width: 6rem;" @onclick="@LimpiarFormulario">Limpiar</MatButton>
+    <MatButton Raised="true" style="width: 13rem;" @onclick="@sumar">Calcular</MatButton>
+    </div>
+    
+ 
+
+
+</div>
+<div class="contenedorcalculadora" >
+
+
+    <br>  <br>
+    <MatTextField id="lblSalarioDiario" @bind-Value="@salarioDiario" Dense="true" Label="SalarioDiario" Outlined="false"
+    style="width:-webkit-fill-available;"  ></MatTextField>
+    <br><br>
+    <MatTextField id="lblAguinaldoProporcional" @bind-Value="@Aguinaldo"  Dense="true" Label="Aguinaldo" Outlined="false"
+    style="width:-webkit-fill-available;"  ></MatTextField>
+    <br><br>
+ 
+</div>
+
+</div>
+
+
+
+
+
+
+    
+    
+    
+
+
+</center>
+
+
+@code
+{
+     string DiasdeVacaciones;
+     string SalarioMensual;
+     DateTime FechaInicio, FechaTerminacion;
+     double salarioDiario,  pagoVacaciones, noventaDiasSalario, doceDiasSalario, 
+     _salarioMensual, _diasdeVacaciones;
+
+     int Aguinaldo=0;
+     
+
+    @* Captura del salario menssual para sacar el diario *@
+
+    public void sumar(){
+
+        @* Conversiones a Int *@
+        _salarioMensual = Convert.ToDouble(SalarioMensual);
+        _diasdeVacaciones=Convert.ToDouble(DiasdeVacaciones);
+
+        @* Procesamiento de fechas *@
+        Console.WriteLine(FechaTerminacion.ToString("MM/dd/yyyy"));
+
+        @* Determinar el inicio de año para poder realizar el equivalente al aguinaldo *@
+        int currentyear=Convert.ToInt32(FechaTerminacion.ToString("yyyy"));
+        System.Console.WriteLine("Año en curso: " + currentyear);
+        string FechaAnioEnCursoString=("01/01/"+currentyear);
+        DateTime FechaAnioEnCurso=Convert.ToDateTime(FechaAnioEnCursoString);
+        @* System.Console.WriteLine("Fecha concatenada del año en curso: "  + FechaAnioEnCurso); *@
+        
+        @* Recibir el año de inicio *@
+        int startedyearString=Convert.ToInt32(FechaInicio.ToString("yyyy"));
+        System.Console.WriteLine("Año de inicio es: " + startedyearString);
+        DateTime startedyear=Convert.ToDateTime("01/01/"+startedyearString);
+        System.Console.WriteLine("Año de inicio: "+ startedyear);
+
+
+        @* Conteo de dias para el aguinaldo *@
+        var DiasAnioEnCurso1=FechaTerminacion-FechaAnioEnCurso;
+        int DiasAnioEnCurso=(int)(DiasAnioEnCurso1.TotalDays);
+        System.Console.WriteLine("Dias del Año en curso restadas: " + DiasAnioEnCurso);
+        @* Finaliza el equivalewnte aguinaldo fechas *@
+
+        Console.WriteLine("Proceamiento de las fechas");
+        var yearsOld = FechaTerminacion - FechaInicio;
+        Console.WriteLine("Dias del test: "+ yearsOld);
+        int years = (int)(yearsOld.TotalDays / 365.25);
+        int months = (int)(((yearsOld.TotalDays / 365.25) - years) * 12);
+        int dayss= (int)(( ( ( ( yearsOld.TotalDays / 365.25) - years) * 12)-months)*30.5);
+        @* Resultado *@
+        Console.WriteLine("RESULTADO");
+        Console.WriteLine(years + " Años");
+        Console.WriteLine(months + " Meses");
+        Console.WriteLine(dayss + " Dias");
+
+        @* Procesamiento de los datos *@
+
+        @* Salario DIARIO *@
+        Console.WriteLine(_salarioMensual);
+        salarioDiario=(_salarioMensual/30);
+        Console.WriteLine("El salario diario es: "+ salarioDiario);
+
+        @* VACACIONES *@
+        pagoVacaciones=salarioDiario*_diasdeVacaciones;
+        Console.WriteLine("Pago de vacaciones: "+ pagoVacaciones);
+
+        @* 90 DIAS DEL SALARIO *@
+        noventaDiasSalario=salarioDiario*90;
+        Console.WriteLine("90 dias de salario: "+ noventaDiasSalario);
+
+        @* 12 DIAS DEL SALARIO *@
+        doceDiasSalario=salarioDiario*12*years;
+        Console.WriteLine("12 dias de salario: "+ doceDiasSalario);
+
+        @* AGUINALDO = 15 dias de salario, calcular lo pendiente por el año trabajado*@
+        @* Calculo de aguinaldo diario *@
+        int salarioAguinaldoDiario=Convert.ToInt32((salarioDiario*15)/365.25);
+        if (FechaAnioEnCurso==startedyear)
+        {
+            @* Resta de dias entre una fecha y otra *@
+            Aguinaldo=Convert.ToInt32((int)(((FechaTerminacion-FechaInicio).TotalDays)+1)*salarioAguinaldoDiario);
+            System.Console.WriteLine("Aguinaldo cuando es el mismo año: "+ Aguinaldo);
+        }else{
+            Aguinaldo=Convert.ToInt32(salarioAguinaldoDiario*DiasAnioEnCurso);
+            Console.WriteLine("Aguinaldo es: "+ Aguinaldo);
+        }
+        
+
+
+        @* TOTAL DE LA LIQUIDACIÓN *@
+
+
+
+         
+    }
+
+
+
+
+/*Utilidades*/
+
+        private void LimpiarFormulario()
+        {
+        DiasdeVacaciones=string.Empty;
+        SalarioMensual=string.Empty;
+        FechaInicio=DateTime.Now;
+        }
+    
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            if (firstRender)
+            {
+                await js.InvokeVoidAsync("focusById", "txtSalarioMensual");
+            }
+        }
+
+}

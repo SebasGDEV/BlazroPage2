@@ -1,2 +1,2 @@
-# BlazroPage2
- s
+# BlazorPage
+ Blazor Page to deploy
