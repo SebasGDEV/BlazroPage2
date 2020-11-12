@@ -2563,11 +2563,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SGARCORO\\Documents\\GitHub\\BlazorPage\\Blazor.csproj",
+      "projectUniqueName": "C:\\Users\\SGARCORO\\Documents\\GitHub\\BlazroPage2\\Blazor.csproj",
       "projectName": "Blazor",
-      "projectPath": "C:\\Users\\SGARCORO\\Documents\\GitHub\\BlazorPage\\Blazor.csproj",
+      "projectPath": "C:\\Users\\SGARCORO\\Documents\\GitHub\\BlazroPage2\\Blazor.csproj",
       "packagesPath": "C:\\Users\\SGARCORO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SGARCORO\\Documents\\GitHub\\BlazorPage\\obj\\",
+      "outputPath": "C:\\Users\\SGARCORO\\Documents\\GitHub\\BlazroPage2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SGARCORO\\AppData\\Roaming\\NuGet\\NuGet.Config",

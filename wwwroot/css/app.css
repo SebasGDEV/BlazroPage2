@@ -36,7 +36,8 @@ app {
   width: 20rem;
   height: 35rem;
   -webkit-box-flex: inherit;
-  direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .box-liquidacion {
@@ -177,6 +178,10 @@ app {
 @media (min-width: 768px) {
   app {
     flex-direction: row;
+  }
+
+  .contenedorcalculadora {
+    flex-direction: column;
   }
 
   .sidebar {
