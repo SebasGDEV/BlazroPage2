@@ -37,12 +37,11 @@ app {
   height: 35rem;
   -webkit-box-flex: inherit;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .box-liquidacion {
-  column-count: 2;
-  direction: column;
+  flex-direction: row;
 }
 
 .main {
@@ -180,8 +179,9 @@ app {
     flex-direction: row;
   }
 
-  .contenedorcalculadora {
+  .box-liquidacion {
     flex-direction: column;
+    column-count: 2;
   }
 
   .sidebar {
