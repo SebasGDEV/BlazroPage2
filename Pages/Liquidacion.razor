@@ -35,6 +35,9 @@
     style="width:-webkit-fill-available;"  ></MatTextField>
     <br>
     <MatTextField id="lblTHreeMonthsSalary" @bind-Value="@threeMonthsSalary" Dense="true" Label="3 Meses de Salario" Outlined="false"
+    style="width:-webkit-fill-available;" Icon="info" @IconOnClick="async () => await ModalForInfo(1)" ></MatTextField>
+    <br>
+    <MatTextField id="lblTwentyDaysSalary" @bind-Value="@twentyDaysSalary" Dense="true" Label="3 Meses de Salario" Outlined="false"
     style="width:-webkit-fill-available;"  ></MatTextField>
 </div>
 
@@ -59,7 +62,7 @@
      string SalarioMensual;
      DateTime FechaInicio, FechaTerminacion;
      double salarioDiario,  pagoVacaciones, noventaDiasSalario, doceDiasSalario, 
-     _salarioMensual, _diasdeVacaciones, threeMonthsSalary;
+     _salarioMensual, _diasdeVacaciones, threeMonthsSalary, twentyDaysSalary;
 
      int Aguinaldo=0;
      
@@ -140,8 +143,23 @@
         }
         
         @* Calculo de 3 meses de salario *@
-        threeMonthsSalary=salarioDiario*90;
-        System.Console.WriteLine("Salario de 3 meses: " + threeMonthsSalary);
+        if(dayss>30)
+        {
+            threeMonthsSalary=salarioDiario*90;
+            System.Console.WriteLine("Salario de 3 meses: " + threeMonthsSalary);
+        }else
+        {
+            System.Console.WriteLine("La relación Patron-Empleado fue menor a 30 dias");
+        }
+
+        @* Calculol 20 dias de salario diario *@
+        if(dayss>30 && years>=1)
+        {
+            twentyDaysSalary=salarioDiario*20*years;
+            System.Console.WriteLine("20 dias por año: " + twentyDaysSalary);
+        }else{
+            System.Console.WriteLine("La relación Patron-Empleado fue menor a 30 dias");
+        }
 
 
         @* TOTAL DE LA LIQUIDACIÓN *@
@@ -163,6 +181,12 @@
         FechaInicio=DateTime.Now;
         }
     
+
+        @* Info *@
+        public void ModalForInfo(int infoModal)
+        {
+            System.Console.WriteLine("Estoy en info Modal: " + infoModal);
+        }
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             if (firstRender)
@@ -170,5 +194,6 @@
                 await js.InvokeVoidAsync("focusById", "txtSalarioMensual");
             }
         }
+
 
 }
