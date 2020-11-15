@@ -34,6 +34,8 @@
     <MatTextField id="lblAguinaldoProporcional" @bind-Value="@Aguinaldo"  Dense="true" Label="Aguinaldo" Outlined="false"
     style="width:-webkit-fill-available;"  ></MatTextField>
     <br>
+    <MatTextField id="lblTHreeMonthsSalary" @bind-Value="@threeMonthsSalary" Dense="true" Label="3 Meses de Salario" Outlined="false"
+    style="width:-webkit-fill-available;"  ></MatTextField>
 </div>
 
 </div>
@@ -57,7 +59,7 @@
      string SalarioMensual;
      DateTime FechaInicio, FechaTerminacion;
      double salarioDiario,  pagoVacaciones, noventaDiasSalario, doceDiasSalario, 
-     _salarioMensual, _diasdeVacaciones;
+     _salarioMensual, _diasdeVacaciones, threeMonthsSalary;
 
      int Aguinaldo=0;
      
@@ -137,6 +139,9 @@
             Console.WriteLine("Aguinaldo es: "+ Aguinaldo);
         }
         
+        @* Calculo de 3 meses de salario *@
+        threeMonthsSalary=salarioDiario*90;
+        System.Console.WriteLine("Salario de 3 meses: " + threeMonthsSalary);
 
 
         @* TOTAL DE LA LIQUIDACIÓN *@
