@@ -35,7 +35,7 @@
     style="width:-webkit-fill-available;"  ></MatTextField>
     <br>
     <MatTextField id="lblTHreeMonthsSalary" @bind-Value="@threeMonthsSalary" Dense="true" Label="3 Meses de Salario" Outlined="false"
-    style="width:-webkit-fill-available;" Icon="info" @IconOnClick="()=>ModalForInfo(1)" ></MatTextField>
+    style="width:-webkit-fill-available;" Icon="info" IconTrailing="true" IconOnClick="@(e => ModalForInfo(e, 1))" ></MatTextField>
     <br>
     <MatTextField id="lblTwentyDaysSalary" @bind-Value="@twentyDaysSalary" Dense="true" Label="3 Meses de Salario" Outlined="false"
     style="width:-webkit-fill-available;"  ></MatTextField>
@@ -183,9 +183,11 @@
     
 
         @* Info *@
-        public void ModalForInfo(int infoModal)
+        private void ModalForInfo(MouseEventArgs e, int infoModal)
         {
-            System.Console.WriteLine("Estoy en info Modal: " + infoModal);
+           System.Console.WriteLine("ea");
+           System.Console.WriteLine(infoModal);
+    
         }
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {

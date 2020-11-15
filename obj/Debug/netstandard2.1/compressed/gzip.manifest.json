@@ -1,7 +1,7 @@
 {
   "FilesToCompress": [
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\SqLISbZF0p0E2gWeC7vEYkTOgysq1Dip7BxLDewiUxo=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\a9mShmxmnBoeha9XbF-u9B1OpKH-GXhvfq8LhBHJ1wk=.hash",
       "Source": "C:\\Users\\SGARCORO\\Documents\\GitHub\\BlazroPage2\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\Blazor.dll",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Blazor.dll.gz"
     },
@@ -161,9 +161,9 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.DependencyInjection.Abstractions.dll.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\bSgsT2x5xMvs8mara5wU_EJwcyHa9GVMU85HwhWcdWM=.hash",
-      "Source": "C:\\Users\\SGARCORO\\Documents\\GitHub\\BlazroPage2\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\Microsoft.AspNetCore.Components.Web.dll",
-      "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.Web.dll.gz"
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\2oVri53ZcynS_CAbeFZwEcTd_9HjJG3fwSrZVCriA-o=.hash",
+      "Source": "C:\\Users\\SGARCORO\\Documents\\GitHub\\BlazroPage2\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\MatBlazor.dll",
+      "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/MatBlazor.dll.gz"
     },
     {
       "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\m7Q_cF5-ji3OMfdGlCuE8pQ-iM_kxNHLq-IEWVvIaOg=.hash",
@@ -191,14 +191,14 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Logging.Abstractions.dll.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\2oVri53ZcynS_CAbeFZwEcTd_9HjJG3fwSrZVCriA-o=.hash",
-      "Source": "C:\\Users\\SGARCORO\\Documents\\GitHub\\BlazroPage2\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\MatBlazor.dll",
-      "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/MatBlazor.dll.gz"
-    },
-    {
       "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\LqwA2Rpm96Ualk0IhLZar87kfRCyKHzHTeTt2jYhm7M=.hash",
       "Source": "C:\\Users\\SGARCORO\\Documents\\GitHub\\BlazroPage2\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\Microsoft.JSInterop.dll",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.dll.gz"
+    },
+    {
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\bSgsT2x5xMvs8mara5wU_EJwcyHa9GVMU85HwhWcdWM=.hash",
+      "Source": "C:\\Users\\SGARCORO\\Documents\\GitHub\\BlazroPage2\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\Microsoft.AspNetCore.Components.Web.dll",
+      "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.AspNetCore.Components.Web.dll.gz"
     },
     {
       "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\FJ_rEgcx6ljTxwbRXZSUGfrDKpVvOxHCSfNxbnXNn3M=.hash",
@@ -266,7 +266,7 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.WebAssembly.dll.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\NGP7uc8asLli2yz94aS-1FFqfX3lB0Hrphm7tNnAL_g=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\PUYMDOz2zIq80_Ql8byJvstg3j0PkpIwVA3YWTmcjo8=.hash",
       "Source": "C:\\Users\\SGARCORO\\Documents\\GitHub\\BlazroPage2\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\Blazor.pdb",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Blazor.pdb.gz"
     },
@@ -291,7 +291,7 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/blazor.webassembly.js.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\DRczIQe8o2bofZ6ieSvm0bg7tvI9UKWV9z6OLUquExU=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\w1ZS3LQNckLY3pa_c_7WVd2CkOsp1XMlkcwDf5Aeqjk=.hash",
       "Source": "C:\\Users\\SGARCORO\\Documents\\GitHub\\BlazroPage2\\obj\\Debug\\netstandard2.1\\blazor\\blazor.boot.json",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/blazor.boot.json.gz"
     }
