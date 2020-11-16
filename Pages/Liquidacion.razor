@@ -37,11 +37,13 @@
     <MatTextField id="lblTHreeMonthsSalary" @bind-Value="@threeMonthsSalary" Dense="true" Label="3 Meses de Salario" Outlined="false"
     style="width:-webkit-fill-available;" Icon="info" IconTrailing="true" IconOnClick="@(e => ModalForInfo(e, 1))" ></MatTextField>
     <br>
-    <MatTextField id="lblTwentyDaysSalary" @bind-Value="@twentyDaysSalary" Dense="true" Label="3 Meses de Salario" Outlined="false"
-    style="width:-webkit-fill-available;"  ></MatTextField>
+    <MatTextField id="lblTwentyDaysSalary" @bind-Value="@twentyDaysSalary" Dense="true" Label="20 dias de salario" Outlined="false"
+    style="width:-webkit-fill-available;"  Icon="info" IconTrailing="true"   ></MatTextField>
 </div>
 
 </div>
+
+
 
 
 
@@ -181,12 +183,16 @@
         FechaInicio=DateTime.Now;
         }
     
+        
+
 
         @* Info *@
         private void ModalForInfo(MouseEventArgs e, int infoModal)
         {
            System.Console.WriteLine("ea");
            System.Console.WriteLine(infoModal);
+
+    
     
         }
         protected override async Task OnAfterRenderAsync(bool firstRender)
