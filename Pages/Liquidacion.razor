@@ -65,9 +65,9 @@
      string SalarioMensual;
      DateTime FechaInicio, FechaTerminacion;
      double salarioDiario,  pagoVacaciones, noventaDiasSalario, doceDiasSalario, 
-     _salarioMensual, _diasdeVacaciones, threeMonthsSalary, twentyDaysSalary;
+     _salarioMensual, _diasdeVacaciones, threeMonthsSalary, twentyDaysSalary, Aguinaldo;
 
-     int Aguinaldo=0;
+     
      
 
     @* Captura del salario menssual para sacar el diario *@
@@ -134,14 +134,15 @@
 
         @* AGUINALDO = 15 dias de salario, calcular lo pendiente por el año trabajado*@
         @* Calculo de aguinaldo diario *@
-        int salarioAguinaldoDiario=Convert.ToInt32((salarioDiario*15)/365.25);
+        double salarioAguinaldoDiario=Convert.ToDouble((salarioDiario*15)/365);
+        Console.WriteLine("Aguinaldo por dia es: "+ salarioAguinaldoDiario);
         if (FechaAnioEnCurso==startedyear)
         {
             @* Resta de dias entre una fecha y otra *@
-            Aguinaldo=Convert.ToInt32((int)(((FechaTerminacion-FechaInicio).TotalDays)+1)*salarioAguinaldoDiario);
+            Aguinaldo=Convert.ToDouble((double)(((FechaTerminacion-FechaInicio).TotalDays)+1)*salarioAguinaldoDiario);
             System.Console.WriteLine("Aguinaldo cuando es el mismo año: "+ Aguinaldo);
         }else{
-            Aguinaldo=Convert.ToInt32(salarioAguinaldoDiario*DiasAnioEnCurso);
+            Aguinaldo=Convert.ToDouble(salarioAguinaldoDiario*DiasAnioEnCurso);
             Console.WriteLine("Aguinaldo es: "+ Aguinaldo);
         }
         
