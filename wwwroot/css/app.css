@@ -34,7 +34,7 @@ app {
 
 .contenedorcalculadora {
   width: 22rem;
-  height: 35rem;
+  height: 26rem;
   -webkit-box-flex: inherit;
   display: flex;
   flex-direction: column;
